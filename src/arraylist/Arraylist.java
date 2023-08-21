@@ -29,6 +29,8 @@ public class Arraylist {
                     + " 1 - Cadastrar cliente\n"
                     + " 2 - Exibir Clientes\n"
                     + " 3 - Buscar empresa\n"
+                    + " 4 - Acrescentar insumos e custos\n"
+                    + " 5 - Relatórios\n"
                     + "|===========================|");
             numero = sc.nextInt();
             switch (numero) {
@@ -39,7 +41,7 @@ public class Arraylist {
                 case 1:
                     String nome,
                      cpf;
-                    for (int i = 0; i < 2; i++) {
+                    for (int i = 0; i < 3; i++) {
                         System.out.println("Insira o nome:");
                         nome = sc.next();
                         System.out.println("Insira o cpf:");
@@ -51,40 +53,27 @@ public class Arraylist {
                     int tamanhoLista = lista.size();
                     System.out.println("============= CLIENTES =============");
                     for (int i = 0; i < tamanhoLista; i++) {
-                        System.out.printf("Cliente %d: %s\n", (i + 1), lista.get(i));
+                        System.out.printf("Código da empresa: %d: %s\n", (i + 1), lista.get(i));
 
                     }
                     break;
                 case 3:
+                    System.out.println("Insira o codigo da empresa da empresa");
+
                     int busca;
-                    System.out.println("Insira o id da empresa");
                     busca = sc.nextInt();
                     busca = busca - 1;
                     int i = 0;
-//                    while ((busca) != i) {
-
 
                     for (Cliente cli : lista) {
                         if (busca == i) {
-                            System.out.println(cli.nome);
-                            break;
+                            System.out.println("CLIENTE NUMERO "+ (i+1));
+                            System.out.println(cli);
                         }
+                        
+                        i++;
                     }
-//                        if (i == 0 && i != busca) {
-//                            System.out.println("Cadastre uma empresa!!!!!!!");
-//                            break;
-//                        }
-//
-//                        if ((busca) == i) {
-//                            System.out.printf("Cliente %d: %s\n", (i + 1), lista.get(i));
-//                            System.out.println("");
-//                        }
-//                        i++;
-//                        System.out.println("bomdia");
-//                    }
-                    System.out.println("ta caindo fora do for each");
                     break;
-
                 default:
                     System.out.println("Numero invalido");
             }
